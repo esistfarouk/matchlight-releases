@@ -1,4 +1,4 @@
-# VALO Watch
+# Matchlight
 
 Your VALORANT match, live: a banner for every kill, clutch and ace, overlays for your
 stream, your OBS camera and scenes reacting to the round, and LED strips that light up
@@ -9,8 +9,8 @@ memory and never touches your keyboard or mouse.
 
 ## Download
 
-**[Latest release →](https://github.com/esistfarouk/valo-watch-releases/releases/latest)**:
-download `VALO-Watch.exe`, put it in a folder of its own, and double-click it. Windows 10
+**[Latest release →](https://github.com/esistfarouk/matchlight-releases/releases/latest)**:
+download `Matchlight.exe`, put it in a folder of its own, and double-click it. Windows 10
 or 11.
 
 Releases named **beta** are test builds. Every release lists what changed.
@@ -26,11 +26,11 @@ Run anyway**.
 
 ## Found a problem?
 
-[Open an issue](https://github.com/esistfarouk/valo-watch-releases/issues) with what you
+[Open an issue](https://github.com/esistfarouk/matchlight-releases/issues) with what you
 expected, what happened, and the text from the app's **Log** window.
 
 ---
 
-VALO Watch isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot
+Matchlight isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot
 Games or anyone officially involved in producing or managing Riot Games properties. Riot
 Games and VALORANT are trademarks or registered trademarks of Riot Games, Inc.

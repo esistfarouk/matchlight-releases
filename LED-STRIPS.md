@@ -1,6 +1,6 @@
 # LED strips
 
-VALO Watch can play every event on a real LED strip, the same lights as the strip at the top of its window. This is the hardware guide; the manual covers the app.
+Matchlight can play every event on a real LED strip, the same lights as the strip at the top of its window. This is the hardware guide; the manual covers the app.
 
 **Prices** are what Egyptian electronics shops listed in November 2026. They change, so check before you go.
 
@@ -8,7 +8,7 @@ VALO Watch can play every event on a real LED strip, the same lights as the stri
 
 ```mermaid
 flowchart LR
-    A[VALO Watch<br/>reads the game] --> B[Light engine<br/>one colour per LED,<br/>30 times a second]
+    A[Matchlight<br/>reads the game] --> B[Light engine<br/>one colour per LED,<br/>30 times a second]
     B --> C[Light bar<br/>in the window]
     B --> D[Light frame<br/>in OBS]
     B -- Wi-Fi, UDP --> E[ESP32 running WLED]
@@ -21,10 +21,10 @@ flowchart LR
 - A small Wi-Fi board (an **ESP32**) sits between your network and the strip. It runs
   **WLED**, free firmware for exactly this job, which you install from a web page. You
   don't write or compile anything.
-- VALO Watch sends WLED a list of colours over your network about 30 times a second while
+- Matchlight sends WLED a list of colours over your network about 30 times a second while
   something is happening (the protocol is called DDP; UDP port 4048). WLED shows what it
   is sent.
-- When VALO Watch stops sending, WLED goes back to its own effect after about 2.5 seconds.
+- When Matchlight stops sending, WLED goes back to its own effect after about 2.5 seconds.
   So the strip is an ordinary WLED light whenever you aren't playing.
 
 From the event appearing in the game to the strip changing is about half a second, nearly
@@ -62,7 +62,7 @@ chip on the data line. I couldn't find either in an Egyptian store's online list
 ask at the counter.
 
 For comparison, a ready-made smart strip (Govee RGBIC) was listed at **3,000 to 4,500 EGP**
-on Amazon.eg and noon. That is three times the price of the parts above, and VALO Watch
+on Amazon.eg and noon. That is three times the price of the parts above, and Matchlight
 doesn't drive those yet.
 
 
@@ -111,7 +111,7 @@ amp. Tell WLED what your supply can give (below) and it will hold the strip to t
 4. In your router, reserve that address for the board, so it doesn't change.
 
 
-## Connect VALO Watch
+## Connect Matchlight
 
 1. **Settings → Stream**: tick **Serve overlays for OBS and drive LED strips**.
 2. **LED strip address (WLED)**: the board's address, such as `192.168.1.60`.
@@ -156,19 +156,19 @@ anti-flicker to 50 Hz and lower its shutter speed.
 
 | what you see | check |
 |---|---|
-| Nothing lights at all | grounds joined? Data into DIN, not DOUT? Does WLED's own page light the strip? If not, it's wiring or WLED settings, not VALO Watch |
-| WLED works alone but ignores VALO Watch | the address in Settings → Stream; both on the same network; in WLED, **Config → Sync Interfaces → Realtime → Receive UDP realtime** is ticked. Some routers have "client isolation" on guest networks, which blocks this |
+| Nothing lights at all | grounds joined? Data into DIN, not DOUT? Does WLED's own page light the strip? If not, it's wiring or WLED settings, not Matchlight |
+| WLED works alone but ignores Matchlight | the address in Settings → Stream; both on the same network; in WLED, **Config → Sync Interfaces → Realtime → Receive UDP realtime** is ticked. Some routers have "client isolation" on guest networks, which blocks this |
 | Wrong colours (red and green swapped) | colour order in LED Preferences: try GRB, then RGB |
 | Flicker, or the first LED misbehaves | shorten the data wire, add the resistor, then add a level shifter |
 | The far end is dimmer or reddish | voltage drop. Feed 5 V and ground into the far end of the strip as well |
-| It snaps back to a WLED effect mid-match | VALO Watch stopped sending for 2.5 s: was it closed or frozen? |
+| It snaps back to a WLED effect mid-match | Matchlight stopped sending for 2.5 s: was it closed or frozen? |
 | Effects run backwards | put a minus before the address |
-| Only part of the strip lights | the LED count in VALO Watch and in WLED must match |
+| Only part of the strip lights | the LED count in Matchlight and in WLED must match |
 
 The setup page lists each strip and says so if the PC can't reach it.
 
 ---
 
-VALO Watch isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot
+Matchlight isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot
 Games or anyone officially involved in producing or managing Riot Games properties. Riot
 Games and VALORANT are trademarks or registered trademarks of Riot Games, Inc.

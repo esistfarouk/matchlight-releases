@@ -1,6 +1,6 @@
-# VALO Watch manual
+# Matchlight manual
 
-VALO Watch watches your VALORANT screen and reacts to what happens in your match: kills,
+Matchlight watches your VALORANT screen and reacts to what happens in your match: kills,
 deaths, revives, clutches, aces, round and match results. It shows them in its own
 window, as banners over the game, on your stream in OBS, and on LED strips.
 
@@ -10,14 +10,14 @@ reads the game's memory and never presses a key or moves the mouse.
 **Contents:** [Install](#1-install) · [First run](#2-first-run) ·
 [During a match](#3-during-a-match) · [Banners over the game](#4-banners-over-the-game) ·
 [Screen regions](#5-if-something-isnt-picked-up) · [Stream overlays](#6-stream-overlays-in-obs) ·
-[OBS camera and scenes](#7-obs-camera-and-scenes) · [LED strips](#8-led-strips) ·
-[Problems](#9-problems) · [Reporting a bug](#10-reporting-a-bug)
+[OBS camera and scenes](#7-obs-camera-and-scenes) · [Twitch](#8-twitch-markers-and-clips) ·
+[LED strips](#9-led-strips) · [Problems](#10-problems) · [Reporting a bug](#11-reporting-a-bug)
 
 ## 1. Install
 
-1. Download **VALO-Watch.exe** from the
-   [latest release](https://github.com/esistfarouk/valo-watch-releases/releases).
-2. Put it in a folder of its own, such as `Documents\VALO Watch`. It saves its settings
+1. Download **Matchlight.exe** from the
+   [latest release](https://github.com/esistfarouk/matchlight-releases/releases).
+2. Put it in a folder of its own, such as `Documents\Matchlight`. It saves its settings
    next to itself.
 3. Double-click it. The first start takes a few seconds while it unpacks.
 
@@ -118,7 +118,7 @@ Five overlays for your stream, added to OBS as Browser sources. No plugin.
 4. Drag it into place. Press a test button on the setup page to see it fire.
 
 Keep the overlays away from the game's own minimap, score, kill feed and health bar. The
-left side under the minimap is usually free. VALO Watch has to be open for the overlays
+left side under the minimap is usually free. Matchlight has to be open for the overlays
 to show anything; OBS reconnects to it by itself.
 
 ![An ace on stream: banner and light frame](images/overlays-ace.png)
@@ -127,7 +127,7 @@ to show anything; OBS reconnects to it by itself.
 
 ## 7. OBS camera and scenes
 
-VALO Watch can also control OBS directly:
+Matchlight can also control OBS directly:
 
 - your **camera turns grey** while you're dead, and **flashes** in the event's colour on
   highlights;
@@ -138,7 +138,7 @@ VALO Watch can also control OBS directly:
 
 1. In OBS: **Tools → WebSocket Server Settings**. Tick **Enable WebSocket server**, press
    **Show Connect Info**, and copy the **Server Password**.
-2. In VALO Watch: **Settings → OBS**. Tick **Control OBS**, paste the password, and save.
+2. In Matchlight: **Settings → OBS**. Tick **Control OBS**, paste the password, and save.
 3. Open **Settings → OBS** again. The line under the tick box should say "Connected to
    OBS…". The boxes now list your OBS sources and scenes.
 
@@ -151,7 +151,23 @@ VALO Watch can also control OBS directly:
 It only switches away from the scenes you picked here. If you're on another scene, such
 as "Just chatting", nothing moves.
 
-## 8. LED strips
+## 8. Twitch markers and clips
+
+While you're live, Matchlight can drop a **marker** on your stream at every highlight
+(so you can find them all in the VOD later) and **clip** your aces and clutches.
+
+![Settings, Twitch page](images/settings-twitch.png)
+
+1. **Settings → Twitch → Sign in with Twitch.** A code appears. Open
+   `twitch.tv/activate` in your browser, type the code, and approve.
+2. Tick **Mark highlights and make clips on Twitch**, pick what gets clipped, and save.
+3. In your Twitch settings, switch on **Store past broadcasts**. Twitch only allows
+   markers when it's saving the stream.
+
+Markers and clips only work while you're live. The **Log** window lists each new clip's
+link, so you can trim and publish it.
+
+## 9. LED strips
 
 A strip of addressable LEDs on your desk or behind your monitor can play the same lights
 as the strip at the top of the window. You need:
@@ -167,7 +183,7 @@ buttons make it flash.
 The full guide, with wiring and a shopping list, is
 LED strips.
 
-## 9. Problems
+## 10. Problems
 
 | what happens | try |
 |---|---|
@@ -175,14 +191,15 @@ LED strips.
 | Kills are missed | Settings → Detection → **Name match** to 0.7 |
 | Banners don't appear over the game | VALORANT must be in **Windowed Fullscreen** |
 | The first seconds after Start are slow | normal: the text reader is loading |
-| An overlay in OBS is empty | VALO Watch must be open with **Stream** ticked. Open the setup page in a browser: if it doesn't load, that's why |
+| An overlay in OBS is empty | Matchlight must be open with **Stream** ticked. Open the setup page in a browser: if it doesn't load, that's why |
 | "Can't reach OBS" | OBS must be open, with **Enable WebSocket server** ticked |
 | "OBS refused the password" | copy it again from OBS's **Show Connect Info** |
+| Twitch says "you're not live" | markers and clips only work during a stream, with **Store past broadcasts** on |
 | The game feels slower | Settings → Detection → lower **Frames per second** to 5 |
 
-## 10. Reporting a bug
+## 11. Reporting a bug
 
-[Open an issue](https://github.com/esistfarouk/valo-watch-releases/issues) and include:
+[Open an issue](https://github.com/esistfarouk/matchlight-releases/issues) and include:
 
 1. what you expected and what happened;
 2. the text from the **Log** window (top right of the app);
@@ -191,6 +208,6 @@ LED strips.
 
 ---
 
-VALO Watch isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot
+Matchlight isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot
 Games or anyone officially involved in producing or managing Riot Games properties. Riot
 Games and VALORANT are trademarks or registered trademarks of Riot Games, Inc.
